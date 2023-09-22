@@ -1,5 +1,6 @@
 package com.amazon.stepDefs;
 
+import com.amazon.utilities.BrowserUtils;
 import com.amazon.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -25,6 +26,7 @@ public class Hooks {
             scenario.attach(screenshot,"image/png","screenshot");
         }
         Driver.closeDriver();
+        BrowserUtils.waitFor(5);
       //  System.out.println("This is coming from after");
     }
 

@@ -14,4 +14,7 @@ public abstract class BasePage {
     @FindBy(id="nav-link-accountList-nav-line-1")
     public WebElement helloUser;
 
+    @FindBy(xpath="//span[text()='Create a List']")
+    public WebElement createAList;
+
 }
