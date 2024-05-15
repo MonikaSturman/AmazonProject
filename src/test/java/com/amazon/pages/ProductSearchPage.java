@@ -7,26 +7,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class ProductSearchPage extends BasePage{
+public class ProductSearchPage extends BasePage {
 
-    @FindBy(id="searchDropdownBox")
+    @FindBy(id = "searchDropdownBox")
     public WebElement categoryDropdown;
 
-    @FindBy(id="twotabsearchtextbox")
+    @FindBy(id = "twotabsearchtextbox")
     public WebElement searchBar;
 
-    @FindBy(id="nav-search-submit-button")
+    @FindBy(id = "nav-search-submit-button")
     public WebElement searchIcon;
 
-    @FindBy(css=".a-color-state.a-text-bold")
+    @FindBy(css = ".a-color-state.a-text-bold")
     public WebElement searchResultMessage;
 
     // try to find better locator to locate the search results
     // however, this one is good in terms of practising the "ignore case" in Xpath
-    @FindBy(xpath="(//h2/a/span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'hp laptop')])[2]")
+   //@FindBy(xpath = "(//h2/a/span[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'hp laptop')])[2]")
+    @FindBy(xpath = "(//span[@class='a-price-whole'])[1]")
     public WebElement firstProductInSearchResults;
 
     ProductPage productPage = new ProductPage();
+
     public void selectCategoryForSearch(String category) {
         Select select = new Select(categoryDropdown);
         select.selectByVisibleText(category);

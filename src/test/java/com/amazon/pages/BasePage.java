@@ -7,14 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-    public BasePage(){
-        PageFactory.initElements(Driver.get(),this);
+    public BasePage() {
+        PageFactory.initElements(Driver.get(), this);
+        Driver.get().manage().window().maximize();
     }
 
-    @FindBy(id="nav-link-accountList-nav-line-1")
+    @FindBy(id = "nav-link-accountList-nav-line-1")
     public WebElement helloUser;
 
-    @FindBy(xpath="//span[text()='Create a List']")
+    @FindBy(xpath = "//span[text()='Create a List']")
     public WebElement createAList;
 
 }
